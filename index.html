@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Media Matematica e Ponderata</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>
+            Calcolo Media Matematica e Ponderata
+        </h1>
+        <br>
+        <div class="">
+            <label for="voto">Voto</label>
+            <input type="number" id="voto" name="voto" min="0" max="10">
+            <label for="peso">Peso (ignorato con media Matematica)</label>
+            <input type="number" id="peso" name="peso" min="0" max="10">
+            <button id="add">Aggiungi</button>
+            <button id="reset">Reset Voti</button>
+        </div>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>voto</th>
+                    <th>peso</th>
+                </tr>
+            </thead>
+            <tbody id="voti">
+
+            </tbody>
+        </table>
+
+        <div class="grid">
+            <div class="">
+                <button id="mat">Calcola Media Matematica</button>
+            </div>
+            <div class="">
+                <button id="pon">Calcola Media Ponderata</button>
+            </div>
+        </div>
+        <div class="d-triggerer" id="d-triggerer" title="Dyslexia Friendly Mode">
+            <ion-icon name="eye-outline"></ion-icon>
+        </div>
+    </main>
+</body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="dyslexia-friendly.js"></script>
+    <script src="calcolo_media.js"></script>
+</html>

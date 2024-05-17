@@ -1,0 +1,89 @@
+@import url('https://fonts.bunny.net/css?family=noto-color-emoji:400|noto-emoji:300,400,500,600,700');
+@import url('../fonts/opendyslexic/opendyslexic.css');
+@import url('../fonts/blobmoji/blobmoji.css');
+@import url('../fonts/geist/geist.css');
+@import url('./pico/pico.min.css');
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #7cb342;
+  --primary-hover: #689f38;
+  --primary-focus: rgba(124, 179, 66, 0.125);
+  --primary-inverse: #FFF;
+}
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary: #7cb342;
+    --primary-hover: #8bc34a;
+    --primary-focus: rgba(124, 179, 66, 0.25);
+    --primary-inverse: #FFF;
+  }
+}
+[data-theme="dark"] {
+  --primary: #7cb342;
+  --primary-hover: #8bc34a;
+  --primary-focus: rgba(124, 179, 66, 0.25);
+  --primary-inverse: #FFF;
+}
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+:root {
+    --font-family: 'Geist', ui-sans-serif, sans-serif, 'BlobMoji', 'Noto Color Emoji', 'Noto Emoji';
+    font-feature-settings: 'liga' 1, 'calt' 1 !important;
+    scroll-behavior: smooth;
+}
+@supports (font-variation-settings: normal) {
+    :root { --font-family: 'Geist Variable', ui-sans-serif, sans-serif, 'BlobMoji', 'Noto Color Emoji', 'Noto Emoji'; }
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7f7f7f;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777777;
+}
+  .d-triggerer{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    top: 90%;
+    left: 95%;
+    transform: translateX(-50%);
+    background-color: #ff7b00;
+    border: none !important;
+    outline: none;
+    z-index: 2;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    transition: transform, background-color;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+  }
+  .d-triggerer > ion-icon{
+    color: black;
+  }
+  .d-triggerer:hover{
+    transform: translateX(-50%) scale(1.04);
+    cursor: pointer;
+  }
+  .d-triggerer:active{
+    transform: translateX(-50%) scale(0.90);
+  }
