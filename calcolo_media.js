@@ -8,6 +8,14 @@ const reset = document.getElementById('reset');
 const voti = [];
 const pesi = [];
 
+function votivalidi(){
+    if(voti.length == 0){
+        swal("Errore", "Inserisci almeno un voto", "error")
+        return false;
+    }
+    return true;
+}
+
 reset.addEventListener('click', () => {
     while (table.rows.length > 0) {
         table.deleteRow(0);
@@ -36,11 +44,13 @@ add_button.addEventListener('click', () => {
 });
 
 matematica_btn.addEventListener('click', () => {
+    if (!votivalidi()) return;
     const media = calcolaMediaMatematica(voti);
     verificareMedia(media);
 });
 
 ponderata_btn.addEventListener('click', () => {
+    if (!votivalidi()) return;
     const media = calcolaMediaPonderata(voti, pesi);
     verificareMedia(media);
 });
