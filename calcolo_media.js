@@ -17,8 +17,12 @@ function votivalidi(){
 }
 
 reset.addEventListener('click', () => {
-    while (table.rows.length > 0) {
+    while (voti.length > 0) {
+        voti.pop();
         table.deleteRow(0);
+    }
+    while (pesi.length > 0) {
+        pesi.pop();
     }
 });
 
@@ -82,10 +86,15 @@ function verificareMedia(media) {
             title: "😐",
             text: `La tua media è di ${media}, Attento!`
         })
-    } else {
+    } else if (media >= 2.5) {
         swal({
             title: "😵",
             text: `La tua media è di ${media}, sei a rischio debito!`
+        })
+    } else {
+        swal({
+            title: "💀",
+            text: `La tua media è di ${media}... ti conviene darti all'ippica!`
         })
     }
 }
